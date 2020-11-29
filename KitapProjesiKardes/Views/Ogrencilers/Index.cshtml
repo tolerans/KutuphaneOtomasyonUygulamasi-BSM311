@@ -1,0 +1,45 @@
+﻿@model IEnumerable<KitapProjesiKardes.Models.Ogrenciler>
+
+@{
+    ViewBag.Title = "Öğrenci Ekranı";
+}
+
+<h2>Öğrenciler</h2>
+
+<p>
+    @Html.ActionLink("Öğrenci Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contact)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.OgrenciID }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.OgrenciID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.OgrenciID })
+        </td>
+    </tr>
+}
+
+</table>

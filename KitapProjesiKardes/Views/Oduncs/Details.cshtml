@@ -1,0 +1,50 @@
+﻿@model KitapProjesiKardes.Models.Odunc
+
+@{
+    ViewBag.Title = "Detaylar";
+}
+
+<h2>Detaylar</h2>
+
+<div>
+    <h4>Odunc</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kitaplar.KitapAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kitaplar.KitapAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ogrenciler.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ogrenciler.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OduncAlinmaTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OduncAlinmaTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeslimEdilmeTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeslimEdilmeTarihi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.OduncId }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>

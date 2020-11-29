@@ -1,0 +1,63 @@
+﻿@model IEnumerable<KitapProjesiKardes.Models.Kitaplar>
+
+@{
+    ViewBag.Title = "Kitaplar";
+}
+
+<h2>Kitap Listesi</h2>
+
+<p>
+    @Html.ActionLink("Kitap Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DemirBasNO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KitapAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Konu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YerNO)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DemirBasNO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KitapAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Konu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YerNO)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.KitapID }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.KitapID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.KitapID })
+        </td>
+    </tr>
+}
+
+</table>

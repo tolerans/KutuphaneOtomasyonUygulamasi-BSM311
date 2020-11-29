@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KitapProjesiKardes.Models.Odunc>
+
+@{
+    ViewBag.Title = "Ödünç Verilen Kitaplar";
+}
+
+<h2>Ödünç Verilen Kitap Listesi</h2>
+
+<p>
+    @Html.ActionLink("Ödünç Ver", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kitaplar.KitapAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ogrenciler.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OduncAlinmaTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeslimEdilmeTarihi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kitaplar.KitapAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ogrenciler.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OduncAlinmaTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeslimEdilmeTarihi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.OduncId }) |
+            @Html.ActionLink("Detaylar", "Details", new { id=item.OduncId }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.OduncId })
+        </td>
+    </tr>
+}
+
+</table>
