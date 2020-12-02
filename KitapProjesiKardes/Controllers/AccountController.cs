@@ -134,7 +134,7 @@ namespace KitapProjesiKardes.Controllers
             }
         }
 
-        //
+        //Burası anlatılacak
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()
